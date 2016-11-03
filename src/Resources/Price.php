@@ -12,10 +12,15 @@ use WSW\LojaIntegrada\Client\LojaIntegradaException;
  */
 class Price extends BaseResource
 {
+
     /**
-     * @var string
+     * @return $this
      */
-    protected $endPoint = '/v1/produto_preco';
+    protected function setUp()
+    {
+        $this->setEndPoint('/v1/produto_preco');
+        return $this;
+    }
 
     /**
      * @param array $fields

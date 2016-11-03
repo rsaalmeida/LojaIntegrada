@@ -9,18 +9,19 @@ namespace WSW\LojaIntegrada\Resources;
  */
 class Brand extends BaseResource
 {
-    /**
-     * @var string
-     */
-    protected $endPoint = '/v1/marca';
 
     /**
-     * Setup
+     * SetUp Brand
+     * @return $this
      */
-    protected function __setUp()
+    protected function setUp()
     {
+        $this->setEndPoint('/v1/marca');
+
         $this->validator
             ->requirePresence('nome')
             ->notEmpty('nome', 'Required field');
+
+        return $this;
     }
 }

@@ -11,15 +11,22 @@ use WSW\LojaIntegrada\Client\LojaIntegradaException;
  */
 class Stock extends BaseResource
 {
+
     /**
-     * @var string
+     * SetUp Stock.
+     * @return $this
      */
-    protected $endPoint = '/v1/produto_estoque';
+    protected function setUp()
+    {
+        $this->setEndPoint('/v1/produto_estoque');
+        return $this;
+    }
 
 
     /**
      * @param array $fields
-     * @exception LojaIntegradaException
+     * @throws LojaIntegradaException
+     * @return void
      */
     public function save(array $fields = [])
     {

@@ -15,9 +15,10 @@ use Cake\Validation\Validator;
 abstract class BaseResource
 {
     /**
-     * @var
+     * @var string
      */
     protected $endPoint;
+
     /**
      * @var Credentials
      */
@@ -28,12 +29,33 @@ abstract class BaseResource
      */
     protected $client;
 
+    /**
+     * @var Validator
+     */
     protected $validator;
 
     /**
      * @var array
      */
     protected $fieldsDefault = [];
+
+    /**
+     * @return string
+     */
+    public function getEndPoint()
+    {
+        return $this->endPoint;
+    }
+
+    /**
+     * @param string $endPoint
+     * @return BaseResource
+     */
+    public function setEndPoint($endPoint)
+    {
+        $this->endPoint = $endPoint;
+        return $this;
+    }
 
 
     /**
@@ -55,14 +77,14 @@ abstract class BaseResource
             )
         );
 
-        $this->__setUp();
+        $this->setUp();
     }
 
 
     /**
      * @return $this
      */
-    protected function __setUp()
+    protected function setUp()
     {
     }
 

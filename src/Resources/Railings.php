@@ -10,18 +10,17 @@ namespace WSW\LojaIntegrada\Resources;
 class Railings extends BaseResource
 {
     /**
-     * @var string
+     * SetUp Railings.
+     * @return $this
      */
-    protected $endPoint = '/v1/grades';
-
-
-    /**
-     * Setup
-     */
-    protected function __setUp()
+    protected function setUp()
     {
+        $this->setEndPoint('/v1/grades');
+
         $this->validator
             ->requirePresence('nome')
             ->notEmpty('nome', 'Required field');
+
+        return $this;
     }
 }

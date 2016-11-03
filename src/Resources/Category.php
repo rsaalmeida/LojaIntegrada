@@ -10,17 +10,17 @@ namespace WSW\LojaIntegrada\Resources;
 class Category extends BaseResource
 {
     /**
-     * @var string
+     * SetUp Category.
+     * @return $this
      */
-    protected $endPoint = '/v1/categoria';
-
-    /**
-     * Setup
-     */
-    protected function __setUp()
+    protected function setUp()
     {
+        $this->setEndPoint('/v1/categoria');
+
         $this->validator
             ->requirePresence('nome')
             ->notEmpty('nome', 'Required field');
+
+        return $this;
     }
 }

@@ -12,10 +12,6 @@ use WSW\LojaIntegrada\Client\LojaIntegradaException;
  */
 class Image extends BaseResource
 {
-    /**
-     * @var string
-     */
-    protected $endPoint = '/v1/produto_imagem';
 
     /**
      * @var array
@@ -25,9 +21,12 @@ class Image extends BaseResource
 
     /**
      * SetUp Image
+     * @return $this
      */
-    protected function __setUp()
+    protected function setUp()
     {
+        $this->setEndPoint('/v1/produto_imagem');
+
         $this->validator
             ->requirePresence('imagem_url')
             ->notEmpty('imagem_url', 'Required field')
@@ -47,6 +46,8 @@ class Image extends BaseResource
                     implode(', ', $this->mimeType)
                 )
             ]);
+
+        return $this;
     }
 
 

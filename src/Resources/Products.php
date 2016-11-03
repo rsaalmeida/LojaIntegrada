@@ -10,7 +10,12 @@ namespace WSW\LojaIntegrada\Resources;
 class Products extends BaseResource
 {
     /**
-     * @var string
+     * SetUp Products.
+     * @return $this
      */
-    protected $endPoint = '/v1/produto';
+    protected function setUp()
+    {
+        $this->setEndPoint('/v1/produto');
+        return $this;
+    }
 }
