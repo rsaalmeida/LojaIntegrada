@@ -2,6 +2,9 @@
 
 namespace WSW\LojaIntegrada\Resources;
 
+use WSW\LojaIntegrada\Resources\BaseResource;
+use WSW\LojaIntegrada\Client\LojaIntegradaException;
+
 /**
  * Class Price
  * @package WSW\LojaIntegrada\Resources
@@ -17,6 +20,7 @@ class Price extends BaseResource
     /**
      * @param array $fields
      * @exception LojaIntegradaException
+     * @return void
      */
     public function save(array $fields = [])
     {
