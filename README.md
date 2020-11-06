@@ -16,7 +16,7 @@ API integration with e-commerce system [Loja Integrada](https://lojaintegrada.co
 Via Composer
 
 ``` bash
-$ composer require wsw/loja-integrada
+$ composer require rsa/loja-integrada
 ```
 
 ## Usage
